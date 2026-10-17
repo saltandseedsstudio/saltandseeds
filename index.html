@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Salt &amp; Seeds Studio: Stories for Littles. Find us on YouTube, Instagram, TikTok and Facebook.">
+<meta name="description" content="Salt &amp; Seeds Creative Studio: Stories for Littles. Find us on YouTube, Instagram, TikTok and Facebook.">
 <link rel="icon" href="logo.webp">
 <style>body{margin:0}img{max-width:100%}</style>
-<title>Salt &amp; Seeds Studio</title>
+<title>Salt &amp; Seeds Creative Studio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Nunito:wght@400;600;700&display=swap">
 <style>
@@ -78,6 +78,10 @@ h1 { font-family: var(--display); font-weight: 600; font-size: 30px; line-height
 .link .label { font-family: var(--display); font-weight: 500; font-size: 18px; line-height: 1.2; }
 .link .sub { font-size: 13px; color: var(--muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .link .arrow { font-family: var(--display); font-size: 20px; color: var(--muted); flex: none; }
+.link.soon { border-style: dashed; background: transparent; }
+.link.soon:hover { transform: none; border-color: var(--line); }
+.link.soon .icon { background: var(--lavender); color: #2a1d3d; }
+.pill { flex: none; font-size: 12px; font-weight: 700; letter-spacing: .03em; padding: 4px 10px; border-radius: 999px; background: var(--lavender); color: #2a1d3d; }
 
 .contact {
   display: flex; align-items: center; justify-content: center; gap: 10px; flex-wrap: wrap;
@@ -100,7 +104,7 @@ footer { text-align: center; font-size: 12px; color: var(--muted); letter-spacin
 <main>
   <section class="profile">
     <img class="logo" src="logo.webp" alt="Salt &amp; Seeds: Stories for Littles logo" width="1672" height="941">
-    <h1>Salt &amp; Seeds Studio</h1>
+    <h1>Salt &amp; Seeds Creative Studio</h1>
     <p class="handle">@saltandseeds</p>
     <p class="bio">Stories for Littles <span class="sprout" aria-hidden="true">🌱</span></p>
   </section>
@@ -109,7 +113,7 @@ footer { text-align: center; font-size: 12px; color: var(--muted); letter-spacin
     <span>Email</span><code id="email">saltandseedsstudio@gmail.com</code>
     <button type="button" id="copy">Copy</button>
   </div>
-  <footer id="footer">© Salt &amp; Seeds Studio</footer>
+  <footer id="footer">© Salt &amp; Seeds Creative Studio</footer>
 </main>
 
 <script>
@@ -118,6 +122,7 @@ const ICONS = {
   instagram: '<svg viewBox="0 0 24 24"><path d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10Zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4ZM17.3 5.5a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4ZM12 2.2c-2.7 0-3 0-4 .1-3.6.2-5.5 2-5.7 5.7-.1 1-.1 1.3-.1 4s0 3 .1 4c.2 3.6 2 5.5 5.7 5.7 1 .1 1.3.1 4 .1s3 0 4-.1c3.6-.2 5.5-2 5.7-5.7.1-1 .1-1.3.1-4s0-3-.1-4c-.2-3.6-2-5.5-5.7-5.7-1-.1-1.3-.1-4-.1Zm0 1.8c2.6 0 2.9 0 4 .1 2.6.1 3.8 1.4 3.9 3.9.1 1 .1 1.3.1 4s0 2.9-.1 4c-.1 2.5-1.3 3.8-3.9 3.9-1 .1-1.3.1-4 .1s-2.9 0-4-.1c-2.6-.1-3.8-1.4-3.9-3.9-.1-1-.1-1.3-.1-4s0-2.9.1-4C4.2 5.5 5.4 4.2 8 4.1c1-.1 1.3-.1 4-.1Z"/></svg>',
   tiktok: '<svg viewBox="0 0 24 24"><path d="M16.6 2h-3.3v13.4a2.9 2.9 0 1 1-2-2.8V9.2a6.2 6.2 0 1 0 5.3 6.2V8.6a8 8 0 0 0 4.7 1.5V6.8a4.7 4.7 0 0 1-4.7-4.8Z"/></svg>',
   facebook: '<svg viewBox="0 0 24 24"><path d="M24 12a12 12 0 1 0-13.9 11.9v-8.4H7.1V12h3V9.4c0-3 1.8-4.7 4.5-4.7 1.3 0 2.7.2 2.7.2v3h-1.5c-1.5 0-2 .9-2 1.9V12h3.4l-.5 3.5h-2.9v8.4A12 12 0 0 0 24 12Z"/></svg>',
+  tutorials: '<svg viewBox="0 0 24 24"><path d="M20.7 5.6 18.4 3.3a1 1 0 0 0-1.4 0L6 14.3V18h3.7l11-11a1 1 0 0 0 0-1.4ZM9 16H8v-1l8.5-8.5 1 1L9 16ZM4 20h16v2H4z"/></svg>',
 };
 
 const LINKS = [
@@ -125,23 +130,25 @@ const LINKS = [
   { label: "Instagram", icon: "instagram", url: "https://www.instagram.com/saltandseeds_littles/" },
   { label: "TikTok", icon: "tiktok", url: "https://www.tiktok.com/@saltandseeds" },
   { label: "Facebook", icon: "facebook", url: "https://www.facebook.com/saltandseeds/" },
+  { label: "Tutorials", icon: "tutorials", soon: true },
 ];
 
 const $ = id => document.getElementById(id);
 const pretty = u => u.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, "");
 for (const l of LINKS) {
   const li = document.createElement("li");
-  const a = document.createElement("a");
-  a.className = "link";
-  a.href = l.url; a.target = "_blank"; a.rel = "noopener";
+  const a = document.createElement(l.soon ? "div" : "a");
+  a.className = "link" + (l.soon ? " soon" : "");
+  if (!l.soon) { a.href = l.url; a.target = "_blank"; a.rel = "noopener"; }
   a.innerHTML = `<span class="icon" aria-hidden="true">${ICONS[l.icon]}</span><span class="text"><span class="label"></span><span class="sub"></span></span><span class="arrow" aria-hidden="true">→</span>`;
   a.querySelector(".label").textContent = l.label;
-  a.querySelector(".sub").textContent = pretty(l.url);
+  a.querySelector(".sub").textContent = l.soon ? "" : pretty(l.url);
+  if (l.soon) a.querySelector(".arrow").outerHTML = '<span class="pill">Coming soon</span>';
   li.appendChild(a);
   $("links").appendChild(li);
 }
 
-$("footer").textContent = `© ${new Date().getFullYear()} Salt & Seeds Studio`;
+$("footer").textContent = `© ${new Date().getFullYear()} Salt & Seeds Creative Studio`;
 $("copy").addEventListener("click", async e => {
   const email = $("email").textContent;
   try { await navigator.clipboard.writeText(email); e.target.textContent = "Copied"; }
