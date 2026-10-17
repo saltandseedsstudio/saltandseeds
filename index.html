@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Nunito:wght@400;600;700&display=swap">
 <style>
-/* Layout: one narrow centered column; round logo on top, a stack of storybook-paper link rows, quiet footer */
+/* Layout: one narrow centered column; wide logo card on top, a stack of storybook-paper link rows, quiet footer */
 :root {
   --bg: #f4ecdd;
   --surface: #fffaf1;
@@ -48,8 +48,8 @@ main { max-width: 480px; margin: 0 auto; display: flex; flex-direction: column; 
 
 .profile { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 10px; }
 .logo {
-  width: 200px; max-width: 100%; aspect-ratio: 1; border-radius: 50%;
-  object-fit: cover; display: block;
+  width: 100%; max-width: 440px; height: auto; border-radius: 24px;
+  background: #ffffff; display: block;
   box-shadow: 0 10px 30px -12px rgba(74, 44, 26, .45);
 }
 h1 { font-family: var(--display); font-weight: 600; font-size: 30px; line-height: 1.1; margin: 10px 0 0; text-wrap: balance; }
@@ -99,7 +99,7 @@ footer { text-align: center; font-size: 12px; color: var(--muted); letter-spacin
 
 <main>
   <section class="profile">
-    <img class="logo" src="logo.webp" alt="Salt &amp; Seeds: Stories for Littles logo" width="200" height="200">
+    <img class="logo" src="logo.webp" alt="Salt &amp; Seeds: Stories for Littles logo" width="1672" height="941">
     <h1>Salt &amp; Seeds Studio</h1>
     <p class="handle">@saltandseeds</p>
     <p class="bio">Stories for Littles <span class="sprout" aria-hidden="true">🌱</span></p>
