@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Salt &amp; Seeds Studio: Stories for Littles. Find us on YouTube, Instagram, TikTok and Facebook.">
+<link rel="icon" href="logo.webp">
+<style>body{margin:0}img{max-width:100%}</style>
+<title>Salt &amp; Seeds Studio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Nunito:wght@400;600;700&display=swap">
+<style>
+/* Layout: one narrow centered column; round logo on top, a stack of storybook-paper link rows, quiet footer */
+:root {
+  --bg: #f4ecdd;
+  --surface: #fffaf1;
+  --fg: #4a2c1a;
+  --muted: #86685a;
+  --line: #e2d4bd;
+  --accent: #5f7d4c;
+  --accent-fg: #fffaf1;
+  --lavender: #b49dd3;
+  --display: "Fredoka", "Avenir Next Rounded", system-ui, sans-serif;
+  --body: "Nunito", "Avenir Next", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #1c1511; --surface: #2a201a; --fg: #f3e8d8; --muted: #b8a291;
+    --line: #3d3027; --accent: #a7c48e; --accent-fg: #1c1511; --lavender: #c7b4e6; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #1c1511; --surface: #2a201a; --fg: #f3e8d8; --muted: #b8a291;
+  --line: #3d3027; --accent: #a7c48e; --accent-fg: #1c1511; --lavender: #c7b4e6; color-scheme: dark;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--body);
+  font-size: 16px;
+  line-height: 1.5;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 40px 40px;
+}
+main { max-width: 480px; margin: 0 auto; display: flex; flex-direction: column; gap: 28px; }
+
+.profile { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 10px; }
+.logo {
+  width: 200px; max-width: 100%; aspect-ratio: 1; border-radius: 50%;
+  object-fit: cover; display: block;
+  box-shadow: 0 10px 30px -12px rgba(74, 44, 26, .45);
+}
+h1 { font-family: var(--display); font-weight: 600; font-size: 30px; line-height: 1.1; margin: 10px 0 0; text-wrap: balance; }
+.handle { color: var(--muted); font-weight: 600; font-size: 15px; margin: 0; }
+.bio { margin: 0; max-width: 36ch; }
+.bio .sprout { color: var(--accent); }
+
+.links { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }
+.link {
+  display: flex; align-items: center; gap: 14px;
+  padding: 14px 18px;
+  background: var(--surface); color: var(--fg);
+  border: 1.5px solid var(--line); border-radius: 18px;
+  text-decoration: none;
+  transition: transform .15s ease, border-color .15s ease;
+}
+.link:hover { transform: translateY(-2px); border-color: var(--accent); }
+.link:focus-visible { outline: 3px solid var(--lavender); outline-offset: 2px; }
+.link .icon {
+  flex: none; width: 40px; height: 40px; border-radius: 12px;
+  display: grid; place-items: center;
+  background: var(--accent); color: var(--accent-fg);
+}
+.link .icon svg { width: 20px; height: 20px; fill: currentColor; }
+.link .text { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+.link .label { font-family: var(--display); font-weight: 500; font-size: 18px; line-height: 1.2; }
+.link .sub { font-size: 13px; color: var(--muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.link .arrow { font-family: var(--display); font-size: 20px; color: var(--muted); flex: none; }
+
+.contact {
+  display: flex; align-items: center; justify-content: center; gap: 10px; flex-wrap: wrap;
+  font-size: 14px; color: var(--muted);
+}
+.contact code { font-family: var(--body); font-weight: 600; color: var(--fg); user-select: all; overflow-wrap: anywhere; }
+.contact button {
+  font: inherit; font-size: 13px; font-weight: 700;
+  padding: 6px 14px; border-radius: 999px;
+  border: 1.5px solid var(--line); background: var(--surface); color: var(--fg); cursor: pointer;
+}
+.contact button:focus-visible { outline: 3px solid var(--lavender); outline-offset: 2px; }
+footer { text-align: center; font-size: 12px; color: var(--muted); letter-spacing: .06em; text-transform: uppercase; }
+
+@media (prefers-reduced-motion: reduce) { .link { transition: none; } .link:hover { transform: none; } }
+</style>
+</head>
+<body>
+
+<main>
+  <section class="profile">
+    <img class="logo" src="logo.webp" alt="Salt &amp; Seeds: Stories for Littles logo" width="200" height="200">
+    <h1>Salt &amp; Seeds Studio</h1>
+    <p class="handle">@saltandseeds</p>
+    <p class="bio">Stories for Littles <span class="sprout" aria-hidden="true">🌱</span></p>
+  </section>
+  <ul class="links" id="links"></ul>
+  <div class="contact">
+    <span>Email</span><code id="email">saltandseedsstudio@gmail.com</code>
+    <button type="button" id="copy">Copy</button>
+  </div>
+  <footer id="footer">© Salt &amp; Seeds Studio</footer>
+</main>
+
+<script>
+const ICONS = {
+  youtube: '<svg viewBox="0 0 24 24"><path d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2 31 31 0 0 0 .5 12 31 31 0 0 0 1 16.8a3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-4.8 31 31 0 0 0-.5-4.8ZM9.8 15.1V8.9l5.4 3.1-5.4 3.1Z"/></svg>',
+  instagram: '<svg viewBox="0 0 24 24"><path d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10Zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4ZM17.3 5.5a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4ZM12 2.2c-2.7 0-3 0-4 .1-3.6.2-5.5 2-5.7 5.7-.1 1-.1 1.3-.1 4s0 3 .1 4c.2 3.6 2 5.5 5.7 5.7 1 .1 1.3.1 4 .1s3 0 4-.1c3.6-.2 5.5-2 5.7-5.7.1-1 .1-1.3.1-4s0-3-.1-4c-.2-3.6-2-5.5-5.7-5.7-1-.1-1.3-.1-4-.1Zm0 1.8c2.6 0 2.9 0 4 .1 2.6.1 3.8 1.4 3.9 3.9.1 1 .1 1.3.1 4s0 2.9-.1 4c-.1 2.5-1.3 3.8-3.9 3.9-1 .1-1.3.1-4 .1s-2.9 0-4-.1c-2.6-.1-3.8-1.4-3.9-3.9-.1-1-.1-1.3-.1-4s0-2.9.1-4C4.2 5.5 5.4 4.2 8 4.1c1-.1 1.3-.1 4-.1Z"/></svg>',
+  tiktok: '<svg viewBox="0 0 24 24"><path d="M16.6 2h-3.3v13.4a2.9 2.9 0 1 1-2-2.8V9.2a6.2 6.2 0 1 0 5.3 6.2V8.6a8 8 0 0 0 4.7 1.5V6.8a4.7 4.7 0 0 1-4.7-4.8Z"/></svg>',
+  facebook: '<svg viewBox="0 0 24 24"><path d="M24 12a12 12 0 1 0-13.9 11.9v-8.4H7.1V12h3V9.4c0-3 1.8-4.7 4.5-4.7 1.3 0 2.7.2 2.7.2v3h-1.5c-1.5 0-2 .9-2 1.9V12h3.4l-.5 3.5h-2.9v8.4A12 12 0 0 0 24 12Z"/></svg>',
+};
+
+const LINKS = [
+  { label: "YouTube", icon: "youtube", url: "https://www.youtube.com/@saltandseeds" },
+  { label: "Instagram", icon: "instagram", url: "https://www.instagram.com/saltandseeds_littles/" },
+  { label: "TikTok", icon: "tiktok", url: "https://www.tiktok.com/@saltandseeds" },
+  { label: "Facebook", icon: "facebook", url: "https://www.facebook.com/saltandseeds/" },
+];
+
+const $ = id => document.getElementById(id);
+const pretty = u => u.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, "");
+for (const l of LINKS) {
+  const li = document.createElement("li");
+  const a = document.createElement("a");
+  a.className = "link";
+  a.href = l.url; a.target = "_blank"; a.rel = "noopener";
+  a.innerHTML = `<span class="icon" aria-hidden="true">${ICONS[l.icon]}</span><span class="text"><span class="label"></span><span class="sub"></span></span><span class="arrow" aria-hidden="true">→</span>`;
+  a.querySelector(".label").textContent = l.label;
+  a.querySelector(".sub").textContent = pretty(l.url);
+  li.appendChild(a);
+  $("links").appendChild(li);
+}
+
+$("footer").textContent = `© ${new Date().getFullYear()} Salt & Seeds Studio`;
+$("copy").addEventListener("click", async e => {
+  const email = $("email").textContent;
+  try { await navigator.clipboard.writeText(email); e.target.textContent = "Copied"; }
+  catch { const r = document.createRange(); r.selectNodeContents($("email")); getSelection().removeAllRanges(); getSelection().addRange(r); e.target.textContent = "Selected"; }
+  setTimeout(() => e.target.textContent = "Copy", 1600);
+});
+</script>
+</body>
+</html>
